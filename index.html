@@ -56,20 +56,29 @@
     <script>
         const pages = [
             {
-                title: "Terima Kasih",
-                text: "Atas Keseriusannya dalam mengikuti Open Recruitment UKM-B 2025",
+                title:`<div>
+                            <h1>TERIMA KASIH</h1>
+                            <h2>Atas Keseriusannya dalam mengikuti Open Recruitment UKM-B 2025</h2>
+                        </div>`,
+                text: "Selama 1 tahun ini anda telah mengikuti serangkaian acara dari UKM-B untuk membuktikan anda berhak berada di sini",
                 buttonText: "Next",
                 action: () => goToPage(1)
             },
             {
-                title: "Selamat!",
-                text: "Karena telah LULUS menjadi ANGGOTA UKM-BAHASA untuk periode 2025/2026",
+                title:`<div>
+                            <h1>SELAMAT!</h1>
+                            <h2>Karena telah <b>LULUS</b> menjadi ANGGOTA UKM-BAHASA untuk periode 2025/2026</h2>
+                        </div>`,
+                text: "Kami berharap kamu dapat memberikan kontribusi yang berarti dan menginspirasi di dalam UKM ini",
                 buttonText: "Next",
                 action: () => goToPage(2)
             },
             {
-                title: "Silahkan Bergabung",
-                text: "ke group resmi UKM Bahasa 2025/2026",
+                title:`<div>
+                            <h1>SILAHKAN BERGABUNG</h1>
+                            <h2>Ke group resmi UKM Bahasa 2025/2026</h2>
+                        </div>`,
+                text: "Tak perlu ragu, kami ingin mengundang kamu untuk menjadi bagian dari keluarga resmi UKM Bahasa. Segera bergabung dengan kami melalui tautan resmi di bawah ini:",
                 buttonText: "Bergabung ke Group Resmi",
                 action: () => window.location.href = "https://www.youtube.com/?hl=ID" // Ganti link grup resmi
             }
@@ -83,10 +92,10 @@
 
             setTimeout(() => {
                 container.innerHTML = `
-                    <h1>${pages[index].title}</h1>
+                    ${pages[index].title}
                     <p>${pages[index].text}</p>
-                    <button id="pageBtn">${pages[index].buttonText}</button>
-                `;
+                     <button id="pageBtn">${pages[index].buttonText}</button>
+                `
                 container.classList.add("show"); // fade-in
 
                 document.getElementById("pageBtn").addEventListener("click", pages[index].action);
